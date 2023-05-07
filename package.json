@@ -1,4 +1,12 @@
 {
+  "name": "backend-tcp",
+  "version": "1.0.0",
+  "description": "backen para el proyecto tcp",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -9,14 +17,7 @@
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22"
   },
-  "name": "backend-tcp",
-  "version": "1.0.0",
-  "description": "backen para el proyecto tcp",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
-  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranklinZ12/Fundacion-transformandoConPazionAPI.git"
