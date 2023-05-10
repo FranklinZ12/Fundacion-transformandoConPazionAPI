@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from "dotenv";
-import router from './routes/auth.js';
+import authRouter from './routes/auth.js';
 import dbConnection from './database/config.js';
 import cors from "cors";
 
@@ -22,7 +22,7 @@ app.use(express.static('public'));
 //Lectura y parseo del body
 app.use(express.json());
 
-app.use(router);
+app.use('/api/auth', authRouter);
 
 //CONFIGURACIÓN DE SERVIDOR
 app.listen({ port: process.env.PORT || 4000 }, () => {
