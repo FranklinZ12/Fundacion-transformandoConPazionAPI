@@ -17,7 +17,7 @@ router.post('/api/auth/new',
     crearUsuario
 );
 
-router.post('https://fundacion-transformando-con-pazion-api.vercel.app/api/auth/',
+router.post('/api/auth/',
     [
         check('email', 'El email es obligatorio').isEmail(),
         check('password', 'El password debe de ser de 6 caracteres o mas').isLength({ min: 6 }),
