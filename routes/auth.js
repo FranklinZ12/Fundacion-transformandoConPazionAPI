@@ -6,7 +6,7 @@ import validarJWT from '../middlewares/validar-jwt.js';
 
 const router = Router();
 
-router.post('/new',
+router.post('/auth/new',
     [
         check('name', 'El nombre es obligatorio').not().isEmpty(),
         check('lastname', 'El apellido es obligatorio').not().isEmpty(),
@@ -17,7 +17,7 @@ router.post('/new',
     crearUsuario
 );
 
-router.post('/',
+router.post('/auth',
     [
         check('email', 'El email es obligatorio').isEmail(),
         check('password', 'El password debe de ser de 6 caracteres o mas').isLength({ min: 6 }),
@@ -25,7 +25,7 @@ router.post('/',
     ],
     loginUsuario);
 
-router.get('/renew', validarJWT, revalidarToken);
+router.get('auth/renew', validarJWT, revalidarToken);
 
 
 export default router;

@@ -22,7 +22,7 @@ app.use(express.static('public'));
 //Lectura y parseo del body
 app.use(express.json());
 
-app.use('/api/auth', authRouter);
+app.use('/api', authRouter);
 
 //CONFIGURACIÓN DE SERVIDOR
 app.listen({ port: process.env.PORT || 4000 }, () => {
