@@ -6,10 +6,16 @@
             "use": "@vercel/node"
         }
     ],
-        "routes": [
-            {
-                "src": "/(.*)",
-                "dest": "/"
-            }
-        ]
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ],
+    "functions": {
+        "api/**/*.js": {
+            "memory": 512,
+            "maxDuration": 30
+        }
+    }
 }
