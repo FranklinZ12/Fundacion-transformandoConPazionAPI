@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 import router from './routes/auth.js';
 import dbConnection from './database/config.js';
 import cors from "cors";
-import {readdir} from "fs/promises";
-import { join } from 'path';
 
 
 //VARIABLES DE ENTORNO
@@ -24,19 +22,6 @@ app.use(express.static('public'));
 
 //Lectura y parseo del body
 app.use(express.json());
-
-async function addRoutes(app) {
-    const files = await readdir(join(process.cwd(), "routes"));
-    const routes = files.map((file) => import(`./routes/${file}`));
-    const resolvedRoutes = await Promise.all(routes);
-    resolvedRoutes.forEach((route) => app.use("/", route.default));
-}
-
-addRoutes(app).catch((err) => {
-    console.error(err);
-    process.exit(1);
-});
-
 
 app.use(router);
 
