@@ -19,7 +19,7 @@
         "cors": {
             "handler": "cors",
             "options": {
-                "origin": "*"
+                "origin": "https://fundacion-transformando-con-pazion.vercel.app, https://fundacion-transformando-con-pazion.vercel.app"
             }
         }
     }
