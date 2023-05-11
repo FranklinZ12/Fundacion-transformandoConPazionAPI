@@ -15,7 +15,10 @@ const app = express();
 dbConnection();
 
 //ACTIVACIÓN DE CORS
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}
+));
 
 // Directorio Público
 app.use(express.static('public'));
