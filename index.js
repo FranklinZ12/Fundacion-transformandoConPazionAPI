@@ -2,8 +2,8 @@ import express from 'express';
 import dotenv from "dotenv";
 import router from './routes/auth.js';
 import dbConnection from './database/config.js';
-import allowCors from './allowCors.js';
-// import cors from "cors";
+// import allowCors from './allowCors.js';
+import cors from "cors";
 
 
 //VARIABLES DE ENTORNO
@@ -16,16 +16,17 @@ const app = express();
 dbConnection();
 
 //ACTIVACIÓN DE CORS
-// app.use(cors({
-//     origin: 'https://fundacion-transformando-con-pazion.vercel.app',
-//     "options":{
-//         "Access-Control-Allow-Origin": "*",
-//         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-//         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//     }
-// }
-// ));
-app.use(allowCors);
+app.use(cors({
+    origin: '*',
+    "options":{
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    }
+}
+));
+// app.use(allowCors);
+// app.use(cors())
 
 // Directorio Público
 app.use(express.static('public'));
