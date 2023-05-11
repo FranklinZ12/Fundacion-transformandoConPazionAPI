@@ -21,7 +21,7 @@
         "cors": {
             "handler": "cors",
             "options": {
-                "origin": "https://fundacion-transformando-con-pazion.vercel.app, https://fundacion-transformando-con-pazion.vercel.app"
+                "origin": "https://fundacion-transformando-con-pazion.vercel.app, https://fundacion-transformando-con-pazion-7wg3kiwyo-franklinz12.vercel.app"
             }
         }
     },
