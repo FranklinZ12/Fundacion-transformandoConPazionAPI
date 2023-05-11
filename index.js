@@ -16,7 +16,7 @@ dbConnection();
 
 //ACTIVACIÓN DE CORS
 app.use(cors({
-    origin: '*',
+    origin: 'https://fundacion-transformando-con-pazion.vercel.app',
 }
 ));
 
