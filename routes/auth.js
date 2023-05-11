@@ -6,7 +6,7 @@ import validarJWT from '../middlewares/validar-jwt.js';
 
 const router = Router();
 
-router.post('api/auth/new',
+router.post('/api/auth/new',
     [
         check('name', 'El nombre es obligatorio').not().isEmpty(),
         check('lastname', 'El apellido es obligatorio').not().isEmpty(),
