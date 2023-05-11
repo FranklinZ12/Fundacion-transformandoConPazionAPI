@@ -1,19 +1,5 @@
 {
     "version": 2,
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.js",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
-        }
-    ],
     "env": {
         "DATABASE_URL": "mongodb+srv://tcp:5RcH3kaf6LphCcsn@clustertcp.yd0hymn.mongodb.net/tcp?retryWrites=true&w=majority"
     },
