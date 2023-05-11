@@ -17,14 +17,6 @@
     "env": {
         "DATABASE_URL": "mongodb+srv://tcp:5RcH3kaf6LphCcsn@clustertcp.yd0hymn.mongodb.net/tcp?retryWrites=true&w=majority"
     },
-    "middlewares": {
-        "cors": {
-            "handler": "cors",
-            "options": {
-                "origin": "https://fundacion-transformando-con-pazion.vercel.app, https://fundacion-transformando-con-pazion-7wg3kiwyo-franklinz12.vercel.app"
-            }
-        }
-    },
     "headers": [
         {
             "source": "/(.*)",
