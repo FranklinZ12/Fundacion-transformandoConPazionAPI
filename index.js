@@ -17,6 +17,11 @@ dbConnection();
 //ACTIVACIÓN DE CORS
 app.use(cors({
     origin: 'https://fundacion-transformando-con-pazion.vercel.app',
+    "options":{
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    }
 }
 ));
 
