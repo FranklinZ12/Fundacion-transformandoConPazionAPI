@@ -31,6 +31,13 @@ app.use(express.static('public'));
 //Lectura y parseo del body
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://fundacion-transformando-con-pazion.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    next();
+});
+
 app.use(router);
 
 //CONFIGURACIÓN DE SERVIDOR
