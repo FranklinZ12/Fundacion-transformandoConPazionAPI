@@ -5,7 +5,6 @@ import dbConnection from './database/config.js';
 // import allowCors from './allowCors.js';
 import cors from "cors";
 
-// const whiteList = ['https://fundacion-transformando-con-pazion.vercel.app/','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app/',];
 
 //VARIABLES DE ENTORNO
 dotenv.config();
@@ -22,11 +21,15 @@ dbConnection();
 // }
 // ));
 // app.use(allowCors);
-app.use(cors())
+app.use(cors({
+    origin: ['https://fundacion-transformando-con-pazion.vercel.app','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+}
+))
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://fundacion-transformando-con-pazion.vercel.app');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
     next();
 });
 
