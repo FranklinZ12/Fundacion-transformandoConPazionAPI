@@ -18,7 +18,7 @@ dbConnection();
 
 //ACTIVACIÓN DE CORS
 app.use(cors({
-    origin: 'whiteList',
+    origin: whiteList,
 }
 ));
 // app.use(allowCors);
