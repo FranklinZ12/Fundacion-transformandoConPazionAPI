@@ -5,7 +5,7 @@ import dbConnection from './database/config.js';
 // import allowCors from './allowCors.js';
 import cors from "cors";
 
-const whiteList = ['https://fundacion-transformando-con-pazion.vercel.app/','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app/',];
+// const whiteList = ['https://fundacion-transformando-con-pazion.vercel.app/','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app/',];
 
 //VARIABLES DE ENTORNO
 dotenv.config();
@@ -17,12 +17,12 @@ const app = express();
 dbConnection();
 
 //ACTIVACIÓN DE CORS
-app.use(cors({
-    origin: whiteList,
-}
-));
+// app.use(cors({
+//     origin: whiteList,
+// }
+// ));
 // app.use(allowCors);
-// app.use(cors())
+app.use(cors())
 
 // Directorio Público
 app.use(express.static('public'));
