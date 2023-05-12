@@ -1,32 +1,26 @@
 {
     "version": 2,
-    "rewrites": [
+    "builds": [
         {
-            "source": "/(.*)",
-            "destination": "/index.js"
+            "src": "./index.js",
+            "use": "@vercel/node"
         }
     ],
-    "headers": [
+    "routes": [
         {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
-        },
-        {
-            "source": "/https://fundacion-transformando-con-pazion.vercel.app/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
+            "src": "/(.*)",
+            "dest": "./index.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "PATCH",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*"
+            }
         }
-    ],
-    "env": {
-        "DATABASE_URL": "mongodb+srv://tcp:5RcH3kaf6LphCcsn@clustertcp.yd0hymn.mongodb.net/tcp?retryWrites=true&w=majority"
-    }
+    ]
 }
