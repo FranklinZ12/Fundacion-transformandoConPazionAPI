@@ -18,7 +18,10 @@ dbConnection();
 app.use(cors({
     origin: ['https://fundacion-transformando-con-pazion.vercel.app','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    optionsSuccessStatus: 200
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: true,
+    optionsSuccessStatus: 204,
 }
 ))
 app.use(function (req, res, next) {
