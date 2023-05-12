@@ -28,7 +28,10 @@ app.use(cors({
 }
 ))
 app.use(function (req, res, next) {
-    res.status(404).send("Sorry can't find that!")
+    res.setHeader('Access-Control-Allow-Origin', 'https://fundacion-transformando-con-pazion.vercel.app');
+    if (req.method === 'OPTIONS') {
+        res.status(200).send();
+    }
 });
 
 // Directorio Público
