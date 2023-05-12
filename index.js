@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from "dotenv";
 import router from './routes/auth.js';
 import dbConnection from './database/config.js';
-// import allowCors from './allowCors.js';
 import cors from "cors";
 
 
@@ -16,11 +15,6 @@ const app = express();
 dbConnection();
 
 //ACTIVACIÓN DE CORS
-// app.use(cors({
-//     origin: whiteList,
-// }
-// ));
-// app.use(allowCors);
 app.use(cors({
     origin: ['https://fundacion-transformando-con-pazion.vercel.app','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -31,6 +25,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'https://fundacion-transformando-con-pazion.vercel.app');
     if (req.method === 'OPTIONS') {
         res.status(200).send();
+    } else {
+        next();
     }
 });
 
