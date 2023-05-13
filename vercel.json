@@ -17,6 +17,12 @@
                 "PATCH",
                 "OPTIONS"
             ],
+            "cors": {
+                "origin": "https://fundacion-transformando-con-pazion.vercel.app",
+                "credentials": true,
+                "preflightContinue": false,
+                "optionsSuccessStatus": 204
+            },
             "headers": {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",

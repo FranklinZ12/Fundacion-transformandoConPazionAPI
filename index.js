@@ -12,28 +12,13 @@ dotenv.config();
 const app = express();
 
 //ACTIVACIÓN DE CORS
-app.use(cors());
+app.use(cors({
+    origin: 'https://fundacion-transformando-con-pazion.vercel.app',
+    credentials: true
+}));
 
 //Base de datos
 dbConnection();
-
-// app.use(cors({
-//     origin: ['https://fundacion-transformando-con-pazion.vercel.app','https://fundacion-transformando-con-pazion-ieyy85za5-franklinz12.vercel.app'],
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//     credentials: true,
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//     preflightContinue: true,
-//     optionsSuccessStatus: 204,
-// }
-// ))
-// app.use(function (req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', 'https://fundacion-transformando-con-pazion.vercel.app');
-//     if (req.method === 'OPTIONS') {
-//         res.status(200).send();
-//     } else {
-//         next();
-//     }
-// });
 
 //Lectura y parseo del body
 app.use(express.json());
