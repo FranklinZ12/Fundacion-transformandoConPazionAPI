@@ -12,7 +12,10 @@ dotenv.config();
 const app = express();
 
 //ACTIVACIÓN DE CORS
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    credentials: true,
+}));
 
 //Base de datos
 dbConnection();
