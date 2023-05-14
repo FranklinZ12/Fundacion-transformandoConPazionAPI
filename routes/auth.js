@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { crearUsuario, loginUsuario, revalidarToken } from '../controllers/auth.js';
+import { crearUsuario, loginUsuario, revalidarToken, enviarEmailDeVerificacion, verificarEmail } from '../controllers/auth.js';
 import { check } from 'express-validator';
 import validarCampos from '../middlewares/validar-campos.js';
 import validarJWT from '../middlewares/validar-jwt.js';
@@ -27,5 +27,6 @@ router.post('/api/auth/',
 
 router.get('/api/auth/renew', validarJWT, revalidarToken);
 
-
+router.post('/api/auth/email/verify', enviarEmailDeVerificacion);
+router.get('/api/auth/email/verify/:token', verificarEmail);
 export default router;

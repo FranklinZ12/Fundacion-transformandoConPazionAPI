@@ -20,6 +20,14 @@ const UsuarioSchema = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    emailVerificationToken: {
+        type: String,
+        default: null
+    },
+    isEmailVerified: {
+        type: Boolean,
+        default: false
     }
 });
 const ModeloUsuario = model('Usuario', UsuarioSchema);
